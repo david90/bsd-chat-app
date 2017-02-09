@@ -68,9 +68,9 @@ In `MessagesViewController.swift`, implement the send message function in `didPr
 let message = SKYMessage()!
 message.body = text
 message.creatorUserRecordID = SKYContainer.default().currentUserRecordID
-chat.addMessage(message, to: (conversation?.conversation)!, completion: { (g, _) in
+chat.addMessage(message, to: (conversation?.conversation)!, completion: { (msg, _) in
     if let sentMessage = msg {
-        guard let transientMessageIndex = self.messages.index(of: message) se {
+        guard let transientMessageIndex = self.messages.index(of: message) else {
             return
         }
 
